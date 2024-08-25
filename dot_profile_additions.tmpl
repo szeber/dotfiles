@@ -11,6 +11,7 @@ export PATH=$PATH:/opt/homebrew/kubebuilder/bin
 export PATH=$PATH:/opt/homebrew/kubebuilder/bin
 export GOPATH=/Users/szeber/go
 export PATH=$PATH:$GOPATH/bin
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 {{- end }}
 
 export LC_ALL=en_US.UTF-8
@@ -31,5 +32,6 @@ fi
 {{- if eq .chezmoi.os "darwin" }}
 source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 {{- end }}
 
