@@ -27,6 +27,7 @@ export EDITOR=mcedit
 alias ls='ls -alFG'
 alias tf="terraform"
 alias k="kubectl"
+alias ch="chezmoi"
 alias sshpw="ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no"
 
 if [ -z "$SSH_AUTH_SOCK" ] ; then
