@@ -29,8 +29,10 @@ if [ -z "$SSH_AUTH_SOCK" ] ; then
     ssh-add -K
 fi
 
-{{- if eq .chezmoi.os "darwin" }}
+{{- if stat "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc" }}
 source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+{{- end }}
+{{- if stat "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc" }}
 source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 {{- end }}
 
